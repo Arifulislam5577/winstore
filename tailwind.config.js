@@ -13,6 +13,9 @@ module.exports = {
         primaryDark: "#0E3B3E",
         grayLight: "#ABA3A3",
         grayDark: "#B6B6B6",
+        grayDeep: "#393939",
+        secondaryLight: "#15ADB7",
+        secondaryDeep: "#00CAD7",
       },
     },
     container: {

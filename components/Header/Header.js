@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import SocialMedia from "../Shared/SocialMedia";
 
 const Header = () => {
   const links = [
@@ -121,24 +122,28 @@ const Header = () => {
         </div>
       </div>
       <div className="bg-primaryDark py-2">
-        <div className="container flex items-center gap-3">
-          <div className="text-white flex items-center gap-2 text-base">
-            <Image
-              src="/icons/hamburger.svg"
-              alt="hamburger"
-              height="12"
-              width="13"
-            />
-            <p>Brouse By Category</p>
+        <div className="container flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="text-white flex items-center gap-2 text-base">
+              <Image
+                src="/icons/hamburger.svg"
+                alt="hamburger"
+                height="12"
+                width="13"
+              />
+              <p>Brouse By Category</p>
+            </div>
+
+            <ul className="flex items-center gap-5 text-sm text-white">
+              {links?.map((link) => (
+                <li key={link.id}>
+                  <Link href={link.path}>{link.title}</Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          <ul className="flex items-center gap-5 text-sm text-white">
-            {links?.map((link) => (
-              <li key={link.id}>
-                <Link href={link.path}>{link.title}</Link>
-              </li>
-            ))}
-          </ul>
+          <SocialMedia />
         </div>
       </div>
     </header>
