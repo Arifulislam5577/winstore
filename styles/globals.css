@@ -9,4 +9,16 @@ body {
   margin: 0;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
+  height: 100%;
+  width: 100%;
+}
+
+html,
+#__next {
+  height: 100%;
+}
+#__next {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

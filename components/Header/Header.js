@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import SocialMedia from "../Shared/SocialMedia";
 
 const Header = () => {
+  const [showNav, setShowNav] = useState(false);
   const links = [
     {
       id: 2,
@@ -27,7 +28,7 @@ const Header = () => {
     },
   ];
   return (
-    <header className="">
+    <header>
       <div className="bg-primaryLight py-1">
         <div className="container flex items-center justify-between">
           <div className="flex items-center justify-between gap-5">
@@ -40,7 +41,7 @@ const Header = () => {
               />
             </Link>
 
-            <form className="flex items-center">
+            <form className="items-center hidden lg:flex">
               <select className="p-2 h-10 bg-white text-grayDark text-xs capitalize rounded-l-md border-r-2 focus:outline-none">
                 <option selected>All Categories</option>
                 <option value="electronics">electronics</option>
@@ -68,7 +69,7 @@ const Header = () => {
           </div>
 
           <div className="flex items-center justify-between gap-8">
-            <div className="text-xs text-white">
+            <div className="text-xs text-white hidden lg:block">
               <p>Call Us Now</p>
               <a href="tel:+011 5827918" className="flex items-center gap-1">
                 <Image
@@ -117,11 +118,22 @@ const Header = () => {
                   />
                 </Link>
               </li>
+              <li className="lg:hidden">
+                <button onClick={() => setShowNav(!showNav)}>
+                  <Image
+                    src="/icons/hamburger.svg"
+                    alt="hamburger"
+                    height="20"
+                    width="20"
+                    className="mt-2"
+                  />
+                </button>
+              </li>
             </ul>
           </div>
         </div>
       </div>
-      <div className="bg-primaryDark py-2">
+      <div className="bg-primaryDark py-2 hidden lg:block">
         <div className="container flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="text-white flex items-center gap-2 text-base">
@@ -144,6 +156,92 @@ const Header = () => {
           </div>
 
           <SocialMedia />
+        </div>
+      </div>
+
+      <div
+        className={`fixed lg:hidden py-10 h-full md:w-1/2 w-full  bg-white top-0 right-0 ${
+          showNav ? "translate-x-0" : "translate-x-full"
+        } duration-300 transition-all`}
+      >
+        <div className="container">
+          <div className="flex items-center justify-between mb-5">
+            <button
+              onClick={() => setShowNav(!showNav)}
+              className="flex items-center text-sm text-grayDark"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-4 h-4"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15.75 19.5L8.25 12l7.5-7.5"
+                />
+              </svg>
+              Back
+            </button>
+
+            <button className="text-grayDark">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-4 h-4"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div className="my-2">
+            <h2 className="font-bold text-sm pb-2 border-b text-dark">
+              Quick Links
+            </h2>
+
+            <ul className="text-sm text-grayDeep space-y-2 mt-3">
+              {links?.map((link) => (
+                <li key={link.id}>
+                  <Link href={link.path}>{link.title}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="my-2">
+            <h2 className="font-bold text-sm pb-2 border-b text-dark">
+              Browse by category
+            </h2>
+
+            <ul className="text-sm text-grayDeep space-y-2 mt-3 capitalize">
+              <li>
+                <Link href="/">All Categories</Link>
+              </li>
+              <li>
+                <Link href="/">electronics</Link>
+              </li>
+              <li>
+                <Link href="/">jewelery</Link>
+              </li>
+              <li>
+                <Link href="/">men clothing</Link>
+              </li>
+              <li>
+                <Link href="/">women clothing</Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </header>

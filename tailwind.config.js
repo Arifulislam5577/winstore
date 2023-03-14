@@ -16,6 +16,7 @@ module.exports = {
         grayDeep: "#393939",
         secondaryLight: "#15ADB7",
         secondaryDeep: "#00CAD7",
+        dark: "#161616",
       },
     },
     container: {

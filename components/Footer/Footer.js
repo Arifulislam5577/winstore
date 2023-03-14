@@ -121,6 +121,14 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+      <div className="bg-dark py-2">
+        <div className="container">
+          <p className="text-lg text-white">
+            © 2021 Winstore. All Rights Reserved.
+          </p>
+        </div>
+      </div>
     </footer>
   );
 };

@@ -1,11 +1,15 @@
+import Head from "next/head";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 
 const Layout = ({ children }) => {
   return (
     <>
+      <Head>
+        <title>WinStore || shop from here</title>
+      </Head>
       <Header />
-      {children}
+      <main>{children}</main>
       <Footer />
     </>
   );
