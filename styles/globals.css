@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+@import url("~slick-carousel/slick/slick.css");
+@import url("~slick-carousel/slick/slick-theme.css");
 
 @tailwind base;
 @tailwind components;
@@ -11,6 +13,7 @@ body {
   font-weight: 400;
   height: 100%;
   width: 100%;
+  overflow-x: hidden;
 }
 
 html,
@@ -21,4 +24,21 @@ html,
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.hero-slider {
+  background-image: url("../public/images/hero.png");
+  background-position: center right;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.slick-dots {
+  bottom: 5px !important;
+}
+
+@media (max-width: 1024px) {
+  .hero-slider {
+    background-position: center left;
+  }
 }
