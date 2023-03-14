@@ -37,6 +37,19 @@ html,
   bottom: 5px !important;
 }
 
+.slick-next:before,
+.slick-prev:before {
+  content: "" !important;
+}
+
+.line {
+  display: -webkit-box;
+  width: 100%;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 @media (max-width: 1024px) {
   .hero-slider {
     background-position: center left;

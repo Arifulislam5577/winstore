@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
 import SocialMedia from "../Shared/SocialMedia";
 
 const Header = () => {
+  const router = useRouter();
   const [showNav, setShowNav] = useState(false);
   const links = [
     {
@@ -27,8 +29,19 @@ const Header = () => {
       path: "/",
     },
   ];
+
+  const location = router.pathname;
+  useEffect(() => {
+    setShowNav(false);
+  }, [location.pathname]);
+
+  showNav &&
+    window.addEventListener("scroll", () => {
+      setShowNav(false);
+    });
+
   return (
-    <header>
+    <header className="z-20">
       <div className="bg-primaryLight py-1">
         <div className="container flex items-center justify-between">
           <div className="flex items-center justify-between gap-5">
