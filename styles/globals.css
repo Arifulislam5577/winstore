@@ -27,7 +27,7 @@ html,
 }
 
 .hero-slider {
-  background-image: url("../public/images/hero.png");
+  background-image: url("/images/hero.png");
   background-position: center right;
   background-size: cover;
   background-repeat: no-repeat;
