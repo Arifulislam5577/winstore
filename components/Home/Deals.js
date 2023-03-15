@@ -69,7 +69,6 @@ const Deals = () => {
           </div>
         </div>
       </div>
-
       <div className="container">
         {loading || !categoryData?.length ? (
           <div className="products grid grid-cols-1 lg:grid-cols-3 grid-rows-1 lg:grid-rows-2 gap-5">
@@ -160,7 +159,7 @@ const Deals = () => {
               </div>
               <div className="col-span-1">
                 <h1 className="text-3xl">
-                  <span className="text-secondaryDeep">Special</span> Offer
+                  <span className="text-primaryDark">Special</span> Offer
                 </h1>
 
                 <img

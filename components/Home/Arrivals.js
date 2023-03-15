@@ -1,28 +1,11 @@
-import React, { useEffect, useState } from "react";
+import useFetch from "../../hooks/useFetch";
 import Loader from "../Shared/Loader";
 import Product from "../Shared/Product";
 
 const Arrivals = () => {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    const fetchProduct = async () => {
-      setLoading(true);
-      try {
-        const response = await fetch(
-          "https://fakestoreapi.com/products?limit=6"
-        );
-        const products = await response.json();
-        setProducts(products);
-        setLoading(false);
-      } catch (error) {
-        setLoading(false);
-        console.log(error);
-      }
-    };
-
-    fetchProduct();
-  }, []);
+  const { loading, data: products } = useFetch(
+    "https://fakestoreapi.com/products?limit=6"
+  );
   return (
     <div className="py-10">
       <div className="container">
