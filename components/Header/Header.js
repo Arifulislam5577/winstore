@@ -42,7 +42,7 @@ const Header = () => {
 
   return (
     <header className="z-20">
-      <div className="bg-primaryLight py-1">
+      <div className="bg-primaryLight lg:py-1 py-2">
         <div className="container flex items-center justify-between">
           <div className="flex items-center justify-between gap-5">
             <Link href="/">
@@ -56,7 +56,7 @@ const Header = () => {
 
             <form className="items-center hidden lg:flex">
               <select className="p-2 h-10 bg-white text-grayDark text-xs capitalize rounded-l-md border-r-2 focus:outline-none">
-                <option selected>All Categories</option>
+                <option defaultValue>All Categories</option>
                 <option value="electronics">electronics</option>
                 <option value="jewelery">jewelery</option>
                 <option value="men's clothing">men clothing</option>
