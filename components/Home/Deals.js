@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import Loader from "../Shared/Loader";
@@ -83,7 +84,13 @@ const Deals = () => {
           <div className="products grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-1 lg:grid-rows-2 gap-5">
             <div className="col-span-1 row-span-1 p-5 border grid-cols-2 grid gap-3">
               <div className="col-span-1">
-                <h2 className="text-sm">{categoryData[0]?.title}</h2>
+                <Link
+                  href={`/product/${categoryData[0]?.id}`}
+                  className="text-sm"
+                >
+                  {categoryData[0]?.title}
+                </Link>
+
                 <h3 className="text-xl text-secondaryDeep">
                   Rs.{categoryData[0]?.price}
                 </h3>
@@ -100,12 +107,13 @@ const Deals = () => {
                 <h1 className="text-3xl">
                   <span className="text-secondaryDeep">Special</span> Offer
                 </h1>
-
-                <img
-                  src={categoryData[0]?.image}
-                  alt={categoryData[0]?.title}
-                  className="h-24 mx-auto mt-5"
-                />
+                <Link href={`/product/${categoryData[0]?.id}`}>
+                  <img
+                    src={categoryData[0]?.image}
+                    alt={categoryData[0]?.title}
+                    className="h-24 mx-auto mt-5"
+                  />
+                </Link>
               </div>
             </div>
             <div className="col-span-1 row-span-2 p-5 border">
@@ -119,14 +127,22 @@ const Deals = () => {
                   <h6>10%</h6>
                 </div>
               </div>
-              <img
-                src={categoryData[1]?.image}
-                alt={categoryData[1]?.title}
-                className="h-60 mx-auto"
-              />
+              <Link href={`/product/${categoryData[1]?.id}`}>
+                <img
+                  src={categoryData[1]?.image}
+                  alt={categoryData[1]?.title}
+                  className="h-60 mx-auto"
+                />
+              </Link>
 
               <div className="my-3">
-                <h2 className="text-xl my-3">{categoryData[1]?.title}</h2>
+                <Link
+                  href={`/product/${categoryData[1]?.id}`}
+                  className="text-xl my-3"
+                >
+                  {categoryData[1]?.title}
+                </Link>
+
                 <div className="flex mt-3 items-center gap-5">
                   <h3 className="text-xl text-secondaryDeep">
                     Rs.{categoryData[1]?.price}
@@ -144,7 +160,12 @@ const Deals = () => {
             </div>
             <div className="col-span-1 row-span-1 p-5 border grid-cols-2 grid gap-3">
               <div className="col-span-1">
-                <h2 className="text-sm">{categoryData[2]?.title}</h2>
+                <Link
+                  href={`/product/${categoryData[2]?.id}`}
+                  className="text-sm"
+                >
+                  {categoryData[2]?.title}
+                </Link>
                 <h3 className="text-xl text-secondaryDeep">
                   Rs.{categoryData[2]?.price}
                 </h3>
@@ -161,12 +182,13 @@ const Deals = () => {
                 <h1 className="text-3xl">
                   <span className="text-primaryDark">Special</span> Offer
                 </h1>
-
-                <img
-                  src={categoryData[2]?.image}
-                  alt={categoryData[2]?.title}
-                  className="h-24 mx-auto mt-5"
-                />
+                <Link href={`/product/${categoryData[2]?.id}`}>
+                  <img
+                    src={categoryData[2]?.image}
+                    alt={categoryData[2]?.title}
+                    className="h-24 mx-auto mt-5"
+                  />
+                </Link>
               </div>
             </div>
             <div className="col-span-1 row-span-1 p-5 border grid grid-cols-2 gap-3">
@@ -174,8 +196,13 @@ const Deals = () => {
                 <h1 className="text-3xl">
                   <span className="text-red-600">Special</span> Offer
                 </h1>
+                <Link
+                  href={`/product/${categoryData[3]?.id}`}
+                  className="text-sm"
+                >
+                  {categoryData[3]?.title}
+                </Link>
 
-                <h2 className="text-sm">{categoryData[3]?.title}</h2>
                 <h3 className="text-xl text-secondaryDeep">
                   Rs.{categoryData[3]?.price}
                 </h3>
@@ -191,11 +218,13 @@ const Deals = () => {
                   <h6>10%</h6>
                 </div>
 
-                <img
-                  src={categoryData[3]?.image}
-                  alt={categoryData[3]?.title}
-                  className="h-24 mx-auto"
-                />
+                <Link href={`/product/${categoryData[3]?.id}`}>
+                  <img
+                    src={categoryData[3]?.image}
+                    alt={categoryData[3]?.title}
+                    className="h-24 mx-auto mt-5"
+                  />
+                </Link>
               </div>
             </div>
 
@@ -206,7 +235,12 @@ const Deals = () => {
                     <span className="text-red-600">Special</span> Offer
                   </h1>
 
-                  <h2 className="text-sm">{categoryData[4]?.title}</h2>
+                  <Link
+                    href={`/product/${categoryData[4]?.id}`}
+                    className="text-sm"
+                  >
+                    {categoryData[4]?.title}
+                  </Link>
                   <h3 className="text-xl text-secondaryDeep">
                     Rs.{categoryData[4]?.price}
                   </h3>
@@ -220,11 +254,13 @@ const Deals = () => {
                     <h6>10%</h6>
                   </div>
 
-                  <img
-                    src={categoryData[4]?.image}
-                    alt={categoryData[4]?.title}
-                    className="h-24 mx-auto"
-                  />
+                  <Link href={`/product/${categoryData[4]?.id}`}>
+                    <img
+                      src={categoryData[4]?.image}
+                      alt={categoryData[4]?.title}
+                      className="h-24 mx-auto mt-5"
+                    />
+                  </Link>
                 </div>
                 <div className="col-span-2">
                   <div className="flex items-center gap-5">

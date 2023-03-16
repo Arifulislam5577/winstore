@@ -13,7 +13,10 @@ const Product = ({ title, category, image, price, id }) => {
       <Link href={`/product/${id}`} className="text-primaryDark text-base line">
         {title}
       </Link>
-      <img src={image} alt={title} className="h-24 mx-auto p-2" />
+
+      <Link href={`/product/${id}`}>
+        <img src={image} alt={title} className="h-24 mx-auto p-2" />
+      </Link>
 
       <div className="flex items-center gap-2 text-xs mb-3">
         <p className="line-through">RS {addTenPercent(price)}</p>
